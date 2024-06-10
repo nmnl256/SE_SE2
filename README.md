@@ -1,5 +1,5 @@
 # SE2
-![Java CI](https://github.com/nmnl256/SE_SE2/actions/workflows/ci.yml/badge.svg)
+![Java CI](https://github.com/nmnl256/SE_SE2/actions/workflows/testing.yml/badge.svg)
 
 
 ## Описание программы
