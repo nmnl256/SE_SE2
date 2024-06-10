@@ -1,5 +1,5 @@
 # SE2
-![Java CI](https://github.com/nmnl256/SE2/actions/workflows/ci.yml/badge.svg)
+![Java CI](https://github.com/nmnl256/SE_SE2/actions/workflows/ci.yml/badge.svg)
 
 
 ## Описание программы
@@ -16,7 +16,8 @@ speedtest1-4.txt - файлы для проверки длительности �
 
 wrongtest.txt - файл с неккоректными данными 
 
-![graph](https://github.com/nmnl256/SE_SE2/assets/148970482/01d40b15-6ca5-4026-af09-a4f007a55947)
+
+![graph](https://github.com/nmnl256/SE_SE2/assets/148970482/80c77dd6-3f95-405d-9a3b-1bbd449f4888)
 
 
 ## Уведомления в Telegram через GitHub Actions
