@@ -2,32 +2,14 @@ package test.java;
 import main.java.Main;
 import org.junit.jupiter.api.Test;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 public class testofSpeed {
     double startTime;
     double endTime;
     double time;
-    
-    public void calculate_time(int[] nums, int test_number)
+    public void calculate_time(int[] nums)
     {
-        int n;
-        if (test_number == 1)
-        {
-            n = 1000;
-        }
-        else if (test_number == 2)
-        {
-            n = 10000;
-        }
-        else if (test_number == 3)
-        {
-            n = 100000;
-        }
-        else
-        {
-            n = 1000000;
-        }
+        int n = nums.length;
 
         startTime = System.nanoTime();
         Main._min(nums);
@@ -54,57 +36,52 @@ public class testofSpeed {
         System.out.println("Время выполнения mult на " + n + " элементов: " + time + " ms");
     }
     @Test
-    public void speedtest1() throws FileNotFoundException
+    public void speedtest1() throws Exception
     {
         File file = new File("src/test/tests/speedtest1.txt");
-        String input = (new Scanner(file)).nextLine();
-        String[] numbers = input.split(" ");
+        String[] numbers = (new Scanner(file)).nextLine().split(" ");
         int[] intnums = new int[numbers.length];
         for (int i = 0; i < numbers.length; i++)
         {
             intnums[i] = Integer.parseInt(numbers[i]);
         }
-        calculate_time(intnums, 1);
+        calculate_time(intnums);
     }
     @Test
-    public void speedtest2() throws FileNotFoundException
+    public void speedtest2() throws Exception
     {
         File file = new File("src/test/tests/speedtest2.txt");
-        String input = (new Scanner(file)).nextLine();
-        String[] numbers = input.split(" ");
+        String[] numbers = (new Scanner(file)).nextLine().split(" ");
         int[] intnums = new int[numbers.length];
         for (int i = 0; i < numbers.length; i++)
         {
             intnums[i] = Integer.parseInt(numbers[i]);
         }
-        calculate_time(intnums,2);
+        calculate_time(intnums);
     }
     @Test
-    public void speedtest3() throws FileNotFoundException
+    public void speedtest3() throws Exception
     {
         File file = new File("src/test/tests/speedtest3.txt");
-        String input = (new Scanner(file)).nextLine();
-        String[] numbers = input.split(" ");
-
+        String[] numbers = (new Scanner(file)).nextLine().split(" ");
         int[] intnums = new int[numbers.length];
         for (int i = 0; i < numbers.length; i++)
         {
             intnums[i] = Integer.parseInt(numbers[i]);
         }
-        calculate_time(intnums,3);
+        calculate_time(intnums);
 
     }
     @Test
-    public void speedtest4() throws FileNotFoundException
+    public void speedtest4() throws Exception
     {
         File file = new File("src/test/tests/speedtest4.txt");
-        String input = (new Scanner(file)).nextLine();
-        String[] numbers = input.split(" ");
+        String[] numbers = (new Scanner(file)).nextLine().split(" ");
         int[] intnums = new int[numbers.length];
         for (int i = 0; i < numbers.length; i++)
         {
             intnums[i] = Integer.parseInt(numbers[i]);
         }
-        calculate_time(intnums,4);
+        calculate_time(intnums);
     }
 }
