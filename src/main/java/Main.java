@@ -1,22 +1,16 @@
 package main.java;
 import java.util.Scanner;
 import java.io.File;
-import java.io.FileNotFoundException;
 public class Main{
-    public static void main(String[] args) throws FileNotFoundException
+    public static void main(String[] args) throws Exception
     {
         File file = new File("src/test/tests/test3.txt");
-
-        String input = (new Scanner(file)).nextLine();
-
-
-        String[] numbers = input.split(" ");
+        String[] numbers = (new Scanner(file)).nextLine().split(" ");
         int[] intnums = new int[numbers.length];
         for (int i = 0; i < numbers.length; i++)
         {
             intnums[i] = Integer.parseInt(numbers[i]);
         }
-
         System.out.println("Минимальное" + " " + _min(intnums));
         System.out.println("Максимальное" + " " + _max(intnums));
         System.out.println("Сумма" + " " + _sum(intnums));
@@ -35,7 +29,9 @@ public class Main{
         return max;
     }
     public static int _min(int[] input)
-    {  int min = 2147483647;
+    {
+
+        int min = 2147483647;
         for (int i = 0; i < input.length; i++)
         {
             if (input[i] < min)
@@ -56,10 +52,10 @@ public class Main{
     }
     public static long _mult(int[] input)
     {
-        long mult = 1;
+        long result = 1;
         for (int i = 0; i < input.length; i++) {
-            mult *= input[i];
+            result *= input[i];
         }
-        return mult;
+        return result;
     }
 }
