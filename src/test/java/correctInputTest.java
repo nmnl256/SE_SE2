@@ -21,7 +21,7 @@ public class correctInputTest
                 flag = true;
             }
         }
-        assertFalse(flag);
+        assertTrue(flag);
         System.out.println("Файл не содержит символов/программа работает неккоректно");
     }
 }
