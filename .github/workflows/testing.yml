@@ -1,5 +1,4 @@
 name: CI System
-
 on:
   push:
     branches: [ "main" ]
@@ -8,7 +7,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -29,9 +27,7 @@ jobs:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       run: |
-            MESSAGE="test failed:"
-            FAILED_TESTS=$(grep '<<< FAILURE!' target/surefire-reports/org.example.NumbersProcessorTest.txt)
-            curl -s -X POST https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage -d "chat_id=${CHAT_ID}&text=${MESSAGE} ${FAILED_TESTS}"
+            MESSAGE="test failed"
     - name: success message
       if: success()
       env:
