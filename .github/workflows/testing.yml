@@ -27,7 +27,11 @@ jobs:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       run: |
-            MESSAGE="test failed"
+            MESSAGE="test failed, [Tests:](${{
+              github.server_url
+            }}/${{ github.repository }}/actions/runs/${{
+              github.run_id
+            }})
     - name: success message
       if: success()
       env:
